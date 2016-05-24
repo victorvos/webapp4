@@ -1,239 +1,281 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      @import url("css/font-awesome.min.css");
-      @import url("css/style.css");
-      @import url("css/header.css");
-      @import url("css/index.css");
-      @import url("css/fab.css");
-      @import url("css/agenda.css");
-      @import url("css/indi.css");
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Worldmap</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+    <script src="main.js"></script>
+    <style type="text/css">
+        label { float: left; width: 100px; }
+        input { margin-bottom: 3px;}
+        div { display: none; }
+        h3 { background-color: aqua; cursor: pointer; }
+        form { display: none; }
+        a { margin-right: 10px; }
     </style>
-    <script src="jquery.min.js">
-    $("input").keypress(function() {
-      console.log("hey");
-      tmpval = $(this).val();
-      if (tmpval == "") {
-        $(this).addClass("red");
-      }else {
-        $(this).removeClass("red");
-      }
-    });
-    </script>
-  </head>
-  <body>
-    <div id="header">
-      <ul>
-        <li>
-          <h1 id="title">Boogie</h1>
-        </li>
-        <li>
-          <div id="search">
-            <form id="searchForm" action="search.do">
-              <input id="searchInput" type="text" name="search" placeholder="Type hier..." required />
+</head>
+<body>
+<h3 id="showForm">Create New Country</h3>
+<form id="countryForm" >
+    <fieldset>
+        <span id="message"></span><br/>
+        <label>code:</label><input type="text" name="code"/><br/>
+        <label>name:</label><input type="text" name="name"/><br/>
+        <label>continent:</label><input type="text" name="continent"/><br/>
+        <label>region:</label><input type="text" name="region"/><br/>
+        <label>surface:</label><input type="text" name="surface"/><br/>
+        <label>population:</label><input type="text" name="population"/><br/>
+        <label>government:</label><input type="text" name="government"/><br/>
+        <button type="button" id="createCountry">Create Country!</button>
+    </fieldset>
+</form>
+<h3 id="showList">Country List</h3>
+<div id="countryList">
+    <a href="#" id="all">All</a>
+    <a href="#" id="surfaces">Largest Surfaces</a>
+    <a href="#" id="populations">Largest Populations</a>
 
-              <select id="seachBy" name="by" placeholder="Zoeken...">
-                <option name="name">Naam</option>
-                <option name="filmer">Filmer</option>
-                <option name="comment">Opmerking</option>
-              </select>
-              <input id="seachGo" type="submit" value="Zoek" />
-            </form>
-          </div>
-        </li>
-      </ul>
-      <a href="settings.html"><div id="settingsIcon" class="fa fa-gear fa-2x"></div></a>
-      <a href="history.html"><div id="historyLink" class="fa fa-inbox fa-2x" method="get"></div></a>
-      <a href="agenda.html"><div id="agendaLink" class="fa fa-calendar fa-2x" method="get"></div></a>
-    </div>
-    <div id="index">
-      <table class="index">
-        <tr>
-          <td class="recordToDo"></td>
-          <td class="recordName">Naam</td>
-          <td class="recordType">Type</td>
-          <td class="recordFilmer">Filmer</td>
-          <td class="recordDate">Datum</td>
-          <td class="recordTime">Tijd</td>
-          <td class="recordProgress">Kans</td>
-        </tr>
-      </table>
-    </div>
-    <div id="sidebar">
-
-    </div>
-    <div id="fab" class="red">
-      <div class="fa fa-floppy-o" title="Opslaan"></div>
-    </div>
-    <div id="content">
-      <div class="titleSection">Zaterdag 30 april (197%)</div>
-      <table class="section">
-        <tr class="record">
-          <td class="recordColor blue"></td>
-          <td class="recordToDo"></td>
-          <td class="recordName">Jeroen van Bennekum</td>
-          <td class="recordType">Lipdub</td>
-          <td class="recordFilmer">Willem Doevendans</td>
-          <td class="recordDate">22 april</td>
-          <td class="recordTime">10:00 - 12:30</td>
-          <td class="recordProgress">99%</td>
-        </tr>
-        <tr class="record">
-          <td class="recordColor blue"></td>
-          <td class="recordToDo noBorder"><div class="red"></div></td>
-          <td class="recordName noBorder">Pipi Langkous</td>
-          <td class="recordType noBorder">Karaoke</td>
-          <td class="recordFilmer noBorder">Willem Doevendans</td>
-          <td class="recordDate noBorder">22 april</td>
-          <td class="recordTime noBorder">15:00 - 20:00</td>
-          <td class="recordProgress noBorder">90%</td>
-        </tr>
-      </table>
-      <div class="titleSection">Zondag 1 mei (75%)</div>
-      <table class="section">
-        <tr class="record">
-          <td class="recordColor green"></td>
-          <td class="recordToDo"></td>
-          <td class="recordName">Vincent van Gogh</td>
-          <td class="recordType">Lipdub</td>
-          <td class="recordFilmer">Bob de Kast</td>
-          <td class="recordDate">25 april</td>
-          <td class="recordTime">11:00 - 14:00</td>
-          <td class="recordProgress">99%</td>
-        </tr>
-        <tr class="record">
-          <td class="recordColor blue"></td>
-          <td class="recordToDo noBorder"><div class="red"></div></td>
-          <td class="recordName noBorder">Quinten Peels</td>
-          <td class="recordType noBorder">Eigen film maken</td>
-          <td class="recordFilmer noBorder">Jari van den Brink</td>
-          <td class="recordDate noBorder">27 april</td>
-          <td class="recordTime noBorder">13:30 - 18:00</td>
-          <td class="recordProgress noBorder">90%</td>
-        </tr>
-      </table>
-      <!-- <div class="titleSection">Rsest van de maand</div> -->
-      <div class="titleSection">Maandag 2 mei</div>
-      <div class="titleSection">Dinsdag 3 mei</div>
-      <div class="titleSection">Woensdag 4 mei (389%)</div>
-      <table class="section">
-        <tr class="record">
-          <td class="recordColor green"></td>
-          <td class="recordToDo"></td>
-          <td class="recordName">Jeroen van Bennekum</td>
-          <td class="recordType">Lipdub</td>
-          <td class="recordFilmer">Willem Doevendans</td>
-          <td class="recordDate">29 april</td>
-          <td class="recordTime">10:00 - 12:30</td>
-          <td class="recordProgress">99%</td>
-        </tr>
-        <tr class="record">
-          <td class="recordColor blue"></td>
-          <td class="recordToDo noBorder"><div class="red"></div></td>
-          <td class="recordName noBorder">Victor Vos</td>
-          <td class="recordType noBorder">Maryoke</td>
-          <td class="recordFilmer noBorder">Lars van Hijfte</td>
-          <td class="recordDate noBorder">30 april</td>
-          <td class="recordTime noBorder">17:00 - 21:00</td>
-          <td class="recordProgress noBorder">95%</td>
-        </tr>
-      </table>
-      <div class="titleSection">Donderdag 6 mei (497%)</div>
-      <table class="section">
-        <tr class="record">
-          <td class="recordColor green"></td>
-          <td class="recordToDo"></td>
-          <td class="recordName">Jeroen van Bennekum</td>
-          <td class="recordType">Lipdub</td>
-          <td class="recordFilmer">Willem Doevendans</td>
-          <td class="recordDate">9 mei</td>
-          <td class="recordTime">10:00 - 12:30</td>
-          <td class="recordProgress">99%</td>
-        </tr>
-        <tr class="record">
-          <td class="recordColor green"></td>
-          <td class="recordToDo"><div class="red"></div></td>
-          <td class="recordName">Quinten Peels</td>
-          <td class="recordType">Eigen film maken</td>
-          <td class="recordFilmer">Jari van den Brink</td>
-          <td class="recordDate">9 mei</td>
-          <td class="recordTime">11:00 - 14:00</td>
-          <td class="recordProgress">90%</td>
-        </tr>
-        <tr class="record">
-          <td class="recordColor blue"></td>
-          <td class="recordToDo"></td>
-          <td class="recordName">Quinten Peels</td>
-          <td class="recordType">Eigen film maken</td>
-          <td class="recordFilmer">Jari van den Brink</td>
-          <td class="recordDate">19 mei</td>
-          <td class="recordTime">11:00 - 14:00</td>
-          <td class="recordProgress">99%</td>
-        </tr>
-        <tr class="record">
-          <td class="recordColor blue"></td>
-          <td class="recordToDo noBorder"><div class="red"></div></td>
-          <td class="recordName noBorder">Jeroen van Bennekum</td>
-          <td class="recordType noBorder">Lipdub</td>
-          <td class="recordFilmer noBorder">Willem Doevendans</td>
-          <td class="recordDate noBorder">19 mei</td>
-          <td class="recordTime noBorder">10:00 - 12:30</td>
-          <td class="recordProgress noBorder">90%</td>
-        </tr>
-      </table>
-    </div>
-    <div id="indi">
-      <div id="indiMain" class="indiPart">
-        <div class="partTitle">Event</div>
-          <hr />
-          <div class="partContent"><ul>
-            <li><label for="change">Kans: </label><input name="change" value="90%" readonly /></li>
-            <li><label for="activity">Activiteit: </label><select name="activity"><option value="0">Lipdub</option><select></li>
-            <li><label for="occasion">Gelegenheid: </label><select name="occasion"><option value="0">Vrijgezellenfeest</option><select></li>
-            <li><label for="date">Event datum: </label><input name="date" type="date" value="2016-04-29" /></li>
-            <li><label for="startTime">Begintijd: </label><input name="startTime" value="10:00" type="time" /></li>
-            <li><label for="endTime">Eindtijd: </label><input name="endTime" value="" type="time" /></li>
-            <li><label>Tijdsduur: </label><input type="time" value="03:30" readonly /></li>
-            <li><label for="location">Locatie: </label><input name="distance" type="text" value="" /></li>
-            <li><label for="distance">Afstand (km): </label><input name="distance" type="number" value="20" /></li>
-            <li><label for="interior">Binnenruimte: </label><select name="interior"><option value="Ja">Ja</option></select></li>
-            <li><label for="surprise">Verrassing: </label><select name="surprise"><option value="Hele groep">Hele groep</option></select></li>
-          </ul></div>
-          <hr />
-          <textarea placeholder="Opmerkingen..." rows="4" draggable="false"></textarea>
-        </div>
-        <form>
-          <div id="indiGroup" class="indiPart">
-            <div class="partTitle">Groep</div>
-              <hr />
-              <div class="partContent"><ul>
-                <li><label for="basePrice">Basisprijs (&euro;): </label><input id="basePrice" name="basePrice" type="number" value="350" readonly /></li>
-                <li><label for="nameOrganisation">Naam instantie: </label><input name="nameOrganisation" type="text" value="5MW" /></li>
-                <li><label for="nameContact">Naam CP: </label><input name="nameContact" type="text" value="Luna van Bennekum" /></li>
-                <li><label for="telContact">Telefoon CP: </label><input name="telContact" type="tel" value="06-19632459" /></li>
-                <li><label for="emailContact">Email CP: </label><input name="emailContact" type="email" value="lunavanbennekum@hotmail.com" /></li>
-                <li><label for="peopleCount">Aantal: </label><input name="peopleCount" type="number" value="" /></li>
-              </ul></div>
-              <hr />
-              <textarea placeholder="Opmerkingen..." rows="4" draggable="false"></textarea>
-          </div>
-
-          <div id="indiPrice" class="indiPart">
-            <div class="partTitle">Prijs</div>
-              <hr />
-              <div class="partContent"><ul>
-                <li><label for="basePrice">Basisprijs (&euro;): </label><input name="basePrice" type="number" value="350" readonly /></li>
-                <li><label for="nameOrganisation">Naam instantie: </label><input name="nameOrganisation" type="text" value="5MW" /></li>
-                <li><label for="nameContact">Naam CP: </label><input name="nameContact" type="text" value="Luna van Bennekum" /></li>
-                <li><label for="telContact">Telefoon CP: </label><input name="telContact" type="tel" value="06-19632459" /></li>
-                <li><label for="emailContact">Email CP: </label><input name="emailContact" type="email" value="lunavanbennekum@hotmail.com" /></li>
-                <li><label for="peopleCount">Aantal: </label><input name="peopleCount" type="number" value="" /></li>
-              </ul></div>
-              <hr />
-              <textarea placeholder="Opmerkingen..." rows="4" draggable="false"></textarea>
-          </div>
-        </form>
-      </div>
-  </body>
+    <table id="countries">
+    </table>
+</div>
+</body>
 </html>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<style>-->
+      <!--@import url("css/font-awesome.min.css");-->
+      <!--@import url("css/style.css");-->
+      <!--@import url("css/header.css");-->
+      <!--@import url("css/index.css");-->
+      <!--@import url("css/fab.css");-->
+      <!--@import url("css/agenda.css");-->
+      <!--@import url("css/indi.css");-->
+    <!--</style>-->
+    <!--<script src="jquery.min.js">-->
+    <!--$("input").keypress(function() {-->
+      <!--console.log("hey");-->
+      <!--tmpval = $(this).val();-->
+      <!--if (tmpval == "") {-->
+        <!--$(this).addClass("red");-->
+      <!--}else {-->
+        <!--$(this).removeClass("red");-->
+      <!--}-->
+    <!--});-->
+    <!--</script>-->
+  <!--</head>-->
+  <!--<body>-->
+    <!--<div id="header">-->
+      <!--<ul>-->
+        <!--<li>-->
+          <!--<h1 id="title">Boogie</h1>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<div id="search">-->
+            <!--<form id="searchForm" action="search.do">-->
+              <!--<input id="searchInput" type="text" name="search" placeholder="Type hier..." required />-->
+
+              <!--<select id="seachBy" name="by" placeholder="Zoeken...">-->
+                <!--<option name="name">Naam</option>-->
+                <!--<option name="filmer">Filmer</option>-->
+                <!--<option name="comment">Opmerking</option>-->
+              <!--</select>-->
+              <!--<input id="seachGo" type="submit" value="Zoek" />-->
+            <!--</form>-->
+          <!--</div>-->
+        <!--</li>-->
+      <!--</ul>-->
+      <!--<a href="settings.html"><div id="settingsIcon" class="fa fa-gear fa-2x"></div></a>-->
+      <!--<a href="history.html"><div id="historyLink" class="fa fa-inbox fa-2x" method="get"></div></a>-->
+      <!--<a href="agenda.html"><div id="agendaLink" class="fa fa-calendar fa-2x" method="get"></div></a>-->
+    <!--</div>-->
+    <!--<div id="index">-->
+      <!--<table class="index">-->
+        <!--<tr>-->
+          <!--<td class="recordToDo"></td>-->
+          <!--<td class="recordName">Naam</td>-->
+          <!--<td class="recordType">Type</td>-->
+          <!--<td class="recordFilmer">Filmer</td>-->
+          <!--<td class="recordDate">Datum</td>-->
+          <!--<td class="recordTime">Tijd</td>-->
+          <!--<td class="recordProgress">Kans</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+    <!--</div>-->
+    <!--<div id="sidebar">-->
+
+    <!--</div>-->
+    <!--<div id="fab" class="red">-->
+      <!--<div class="fa fa-floppy-o" title="Opslaan"></div>-->
+    <!--</div>-->
+    <!--<div id="content">-->
+      <!--<div class="titleSection">Zaterdag 30 april (197%)</div>-->
+      <!--<table class="section">-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor blue"></td>-->
+          <!--<td class="recordToDo"></td>-->
+          <!--<td class="recordName">Jeroen van Bennekum</td>-->
+          <!--<td class="recordType">Lipdub</td>-->
+          <!--<td class="recordFilmer">Willem Doevendans</td>-->
+          <!--<td class="recordDate">22 april</td>-->
+          <!--<td class="recordTime">10:00 - 12:30</td>-->
+          <!--<td class="recordProgress">99%</td>-->
+        <!--</tr>-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor blue"></td>-->
+          <!--<td class="recordToDo noBorder"><div class="red"></div></td>-->
+          <!--<td class="recordName noBorder">Pipi Langkous</td>-->
+          <!--<td class="recordType noBorder">Karaoke</td>-->
+          <!--<td class="recordFilmer noBorder">Willem Doevendans</td>-->
+          <!--<td class="recordDate noBorder">22 april</td>-->
+          <!--<td class="recordTime noBorder">15:00 - 20:00</td>-->
+          <!--<td class="recordProgress noBorder">90%</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+      <!--<div class="titleSection">Zondag 1 mei (75%)</div>-->
+      <!--<table class="section">-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor green"></td>-->
+          <!--<td class="recordToDo"></td>-->
+          <!--<td class="recordName">Vincent van Gogh</td>-->
+          <!--<td class="recordType">Lipdub</td>-->
+          <!--<td class="recordFilmer">Bob de Kast</td>-->
+          <!--<td class="recordDate">25 april</td>-->
+          <!--<td class="recordTime">11:00 - 14:00</td>-->
+          <!--<td class="recordProgress">99%</td>-->
+        <!--</tr>-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor blue"></td>-->
+          <!--<td class="recordToDo noBorder"><div class="red"></div></td>-->
+          <!--<td class="recordName noBorder">Quinten Peels</td>-->
+          <!--<td class="recordType noBorder">Eigen film maken</td>-->
+          <!--<td class="recordFilmer noBorder">Jari van den Brink</td>-->
+          <!--<td class="recordDate noBorder">27 april</td>-->
+          <!--<td class="recordTime noBorder">13:30 - 18:00</td>-->
+          <!--<td class="recordProgress noBorder">90%</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+      <!--&lt;!&ndash; <div class="titleSection">Rsest van de maand</div> &ndash;&gt;-->
+      <!--<div class="titleSection">Maandag 2 mei</div>-->
+      <!--<div class="titleSection">Dinsdag 3 mei</div>-->
+      <!--<div class="titleSection">Woensdag 4 mei (389%)</div>-->
+      <!--<table class="section">-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor green"></td>-->
+          <!--<td class="recordToDo"></td>-->
+          <!--<td class="recordName">Jeroen van Bennekum</td>-->
+          <!--<td class="recordType">Lipdub</td>-->
+          <!--<td class="recordFilmer">Willem Doevendans</td>-->
+          <!--<td class="recordDate">29 april</td>-->
+          <!--<td class="recordTime">10:00 - 12:30</td>-->
+          <!--<td class="recordProgress">99%</td>-->
+        <!--</tr>-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor blue"></td>-->
+          <!--<td class="recordToDo noBorder"><div class="red"></div></td>-->
+          <!--<td class="recordName noBorder">Victor Vos</td>-->
+          <!--<td class="recordType noBorder">Maryoke</td>-->
+          <!--<td class="recordFilmer noBorder">Lars van Hijfte</td>-->
+          <!--<td class="recordDate noBorder">30 april</td>-->
+          <!--<td class="recordTime noBorder">17:00 - 21:00</td>-->
+          <!--<td class="recordProgress noBorder">95%</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+      <!--<div class="titleSection">Donderdag 6 mei (497%)</div>-->
+      <!--<table class="section">-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor green"></td>-->
+          <!--<td class="recordToDo"></td>-->
+          <!--<td class="recordName">Jeroen van Bennekum</td>-->
+          <!--<td class="recordType">Lipdub</td>-->
+          <!--<td class="recordFilmer">Willem Doevendans</td>-->
+          <!--<td class="recordDate">9 mei</td>-->
+          <!--<td class="recordTime">10:00 - 12:30</td>-->
+          <!--<td class="recordProgress">99%</td>-->
+        <!--</tr>-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor green"></td>-->
+          <!--<td class="recordToDo"><div class="red"></div></td>-->
+          <!--<td class="recordName">Quinten Peels</td>-->
+          <!--<td class="recordType">Eigen film maken</td>-->
+          <!--<td class="recordFilmer">Jari van den Brink</td>-->
+          <!--<td class="recordDate">9 mei</td>-->
+          <!--<td class="recordTime">11:00 - 14:00</td>-->
+          <!--<td class="recordProgress">90%</td>-->
+        <!--</tr>-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor blue"></td>-->
+          <!--<td class="recordToDo"></td>-->
+          <!--<td class="recordName">Quinten Peels</td>-->
+          <!--<td class="recordType">Eigen film maken</td>-->
+          <!--<td class="recordFilmer">Jari van den Brink</td>-->
+          <!--<td class="recordDate">19 mei</td>-->
+          <!--<td class="recordTime">11:00 - 14:00</td>-->
+          <!--<td class="recordProgress">99%</td>-->
+        <!--</tr>-->
+        <!--<tr class="record">-->
+          <!--<td class="recordColor blue"></td>-->
+          <!--<td class="recordToDo noBorder"><div class="red"></div></td>-->
+          <!--<td class="recordName noBorder">Jeroen van Bennekum</td>-->
+          <!--<td class="recordType noBorder">Lipdub</td>-->
+          <!--<td class="recordFilmer noBorder">Willem Doevendans</td>-->
+          <!--<td class="recordDate noBorder">19 mei</td>-->
+          <!--<td class="recordTime noBorder">10:00 - 12:30</td>-->
+          <!--<td class="recordProgress noBorder">90%</td>-->
+        <!--</tr>-->
+      <!--</table>-->
+    <!--</div>-->
+    <!--<div id="indi">-->
+      <!--<div id="indiMain" class="indiPart">-->
+        <!--<div class="partTitle">Event</div>-->
+          <!--<hr />-->
+          <!--<div class="partContent"><ul>-->
+            <!--<li><label for="change">Kans: </label><input name="change" value="90%" readonly /></li>-->
+            <!--<li><label for="activity">Activiteit: </label><select name="activity"><option value="0">Lipdub</option><select></li>-->
+            <!--<li><label for="occasion">Gelegenheid: </label><select name="occasion"><option value="0">Vrijgezellenfeest</option><select></li>-->
+            <!--<li><label for="date">Event datum: </label><input name="date" type="date" value="2016-04-29" /></li>-->
+            <!--<li><label for="startTime">Begintijd: </label><input name="startTime" value="10:00" type="time" /></li>-->
+            <!--<li><label for="endTime">Eindtijd: </label><input name="endTime" value="" type="time" /></li>-->
+            <!--<li><label>Tijdsduur: </label><input type="time" value="03:30" readonly /></li>-->
+            <!--<li><label for="location">Locatie: </label><input name="distance" type="text" value="" /></li>-->
+            <!--<li><label for="distance">Afstand (km): </label><input name="distance" type="number" value="20" /></li>-->
+            <!--<li><label for="interior">Binnenruimte: </label><select name="interior"><option value="Ja">Ja</option></select></li>-->
+            <!--<li><label for="surprise">Verrassing: </label><select name="surprise"><option value="Hele groep">Hele groep</option></select></li>-->
+          <!--</ul></div>-->
+          <!--<hr />-->
+          <!--<textarea placeholder="Opmerkingen..." rows="4" draggable="false"></textarea>-->
+        <!--</div>-->
+        <!--<form>-->
+          <!--<div id="indiGroup" class="indiPart">-->
+            <!--<div class="partTitle">Groep</div>-->
+              <!--<hr />-->
+              <!--<div class="partContent"><ul>-->
+                <!--<li><label for="basePrice">Basisprijs (&euro;): </label><input id="basePrice" name="basePrice" type="number" value="350" readonly /></li>-->
+                <!--<li><label for="nameOrganisation">Naam instantie: </label><input name="nameOrganisation" type="text" value="5MW" /></li>-->
+                <!--<li><label for="nameContact">Naam CP: </label><input name="nameContact" type="text" value="Luna van Bennekum" /></li>-->
+                <!--<li><label for="telContact">Telefoon CP: </label><input name="telContact" type="tel" value="06-19632459" /></li>-->
+                <!--<li><label for="emailContact">Email CP: </label><input name="emailContact" type="email" value="lunavanbennekum@hotmail.com" /></li>-->
+                <!--<li><label for="peopleCount">Aantal: </label><input name="peopleCount" type="number" value="" /></li>-->
+              <!--</ul></div>-->
+              <!--<hr />-->
+              <!--<textarea placeholder="Opmerkingen..." rows="4" draggable="false"></textarea>-->
+          <!--</div>-->
+
+          <!--<div id="indiPrice" class="indiPart">-->
+            <!--<div class="partTitle">Prijs</div>-->
+              <!--<hr />-->
+              <!--<div class="partContent"><ul>-->
+                <!--<li><label for="basePrice">Basisprijs (&euro;): </label><input name="basePrice" type="number" value="350" readonly /></li>-->
+                <!--<li><label for="nameOrganisation">Naam instantie: </label><input name="nameOrganisation" type="text" value="5MW" /></li>-->
+                <!--<li><label for="nameContact">Naam CP: </label><input name="nameContact" type="text" value="Luna van Bennekum" /></li>-->
+                <!--<li><label for="telContact">Telefoon CP: </label><input name="telContact" type="tel" value="06-19632459" /></li>-->
+                <!--<li><label for="emailContact">Email CP: </label><input name="emailContact" type="email" value="lunavanbennekum@hotmail.com" /></li>-->
+                <!--<li><label for="peopleCount">Aantal: </label><input name="peopleCount" type="number" value="" /></li>-->
+              <!--</ul></div>-->
+              <!--<hr />-->
+              <!--<textarea placeholder="Opmerkingen..." rows="4" draggable="false"></textarea>-->
+          <!--</div>-->
+        <!--</form>-->
+      <!--</div>-->
+  <!--</body>-->
+<!--</html>-->
