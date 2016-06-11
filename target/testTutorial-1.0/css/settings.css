@@ -1,0 +1,35 @@
+#settings {
+    position: relative;
+
+    width: 80%;
+    margin: 142px 10%;
+}
+
+#settings input[readonly] {
+    border: none;
+    width: 25px;
+    border-right: dotted black 1px;
+}
+
+#settings ul {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#settings ul:empty {
+    display: none;
+}
+
+#settings .titleSection:hover {
+    cursor: pointer;
+}
+
+
+#settings .section {
+    padding: 15px;
+}
+
+#settings .section li {
+    padding: 5px;
+}

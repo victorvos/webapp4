@@ -1,0 +1,90 @@
+#indi {
+  position: relative;
+
+  width: 80%;
+  margin: 82px 10%;
+
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  color: white;
+
+}
+.partTitle {
+  padding: 20px 10px 10px 40px;
+}
+#indi hr {
+  border: none;
+  border-bottom: 1px solid;
+  width: 100%;
+}
+.partContent {
+  padding: 20px 40px;
+}
+#indi input, #indi select, #indi option {
+  height: 30px;
+  padding: 0 5px;
+  margin: 5px 20px 5px 0;
+
+  outline: none;
+  border: none;
+  border-radius: 3px;
+
+  color: white;
+  font-size: 14px;
+}
+.partContent li {
+  display: inline-block;
+  width: 325px;
+}
+.partContent label {
+}
+#indi textarea {
+  width: 100%;
+  padding: 0 0;
+  margin: -8px 20px -3px 0;
+
+  outline: none;
+  border: none;
+
+  color: white;
+  font-size: 14px;
+
+  resize: none;
+}
+
+#indi input[value=""] {
+  background: #F44336;
+}
+
+#indiMain {
+  background: #00BCD4;
+}
+#indiMain input, #indiMain select, #indiMain option, #indiMain textarea {
+  background: #00ACC1;
+}
+#indiMain hr, #indiMain input[readonly] {
+  border-color: #4DD0E1;
+  background: #4DD0E1;
+}
+
+#indiGroup {
+  background: #CDDC39;
+}
+#indiGroup input, #indiGroup select, #indiGroup option, #indiGroup textarea {
+  background: #C0CA33;
+}
+#indiGroup hr, #indiGroup input[readonly] {
+  border-color: #DCE775;
+  background: #DCE775;
+}
+
+#indiPrice {
+  background: #8BC34A;
+}
+#indiPrice input, #indiPrice select, #indiPrice option, #indiPrice textarea {
+  background: #7CB342;
+}
+#indiPrice hr, #indiPrice input[readonly] {
+  border-color: #9CCC65;
+  background: #9CCC65;
+}
