@@ -24,6 +24,7 @@ $(document).ready(function(){
             activiteitenItems += "  <input type='text' name='naam' placeholder='naam...' />";
             activiteitenItems += "  <input type='submit' name='submit' value='voeg toe' />";
             activiteitenItems += "</from></li>";
+
             $("#activiteitenSection").append(activiteitenItems);
         });
     });
@@ -42,9 +43,11 @@ $(document).ready(function(){
                 $("#gelegenhedenSection").append(gelegenhedenItems);
             });
             gelegenhedenItems =  "<li>";
-            gelegenhedenItems += "  <input type='text' name='naam' placeholder='naam...' />";
+            gelegenhedenItems += "  <input type='text' name='naam' placeholder='Name' />";
             gelegenhedenItems += "  <input type='submit' name='submit' value='voeg toe' />";
             gelegenhedenItems += "</li>";
+
+            $("#gelegenhedenSection").append(gelegenhedenItems);
         });
     });
 

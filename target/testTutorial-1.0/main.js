@@ -17,6 +17,8 @@ $(document).ready(function() {
                 $("#countries").append(country.name);
                 $("#countries").append("</li>");
             });
+            $("#countries").append(data);
+            console.log("all!");
         });
     });
     
@@ -29,6 +31,8 @@ $(document).ready(function() {
                 $("#countries").append(country.name);
                 $("#countries").append("</li>");
             });
+            $("#countries").append(data);
+            console.log("populations!");
         });
     });
 
@@ -41,6 +45,8 @@ $(document).ready(function() {
                 $("#countries").append(country.name);
                 $("#countries").append("</li>");
             });
+            $("#countries").append(data);
+            console.log("surfaces!");
         });
     });
     

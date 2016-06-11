@@ -10,8 +10,12 @@ import java.util.List;
  */
 public class CountryDAO extends BaseDAO {
 
+    public boolean werktDit() {
+        return true;
+    }
+
     public List<Country> findAll() {
-        return selectCountries("SELECT * FROM country");
+        return selectCountries("SELECT * FROM countries");
     }
 
     public List<Country> find10LargestPopulations() {
@@ -63,6 +67,7 @@ public class CountryDAO extends BaseDAO {
                 String region = dbResultSet.getString("region");
                 int population = dbResultSet.getInt("population");
                 double surface = dbResultSet.getDouble("surfaceArea");
+
                 String governmentForm = dbResultSet.getString("governmentForm");
 
                 results.add(new Country(code,name,continent,region,surface,population,governmentForm));
@@ -85,7 +90,9 @@ public class CountryDAO extends BaseDAO {
             String governmentForm = country.getGovernmentForm();
 
             Statement statement = con.createStatement();
+
             statement.executeQuery("UPDATE country SET name="+name+", continent="+continent+", region="+region+", population="+population+", surfaceArea="+surface+", governmentForm="+governmentForm+" WHERE code="+code);
+
 
         }catch (SQLException sqle) { sqle.printStackTrace(); }
 

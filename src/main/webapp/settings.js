@@ -47,7 +47,7 @@ $(document).ready(function(){
             gelegenhedenItems += "  <input type='submit' name='submit' value='voeg toe' />";
             gelegenhedenItems += "</li>";
 
-            $("#activiteitenSection").append(activiteitenItems);
+            $("#gelegenhedenSection").append(gelegenhedenItems);
         });
     });
 
@@ -68,6 +68,8 @@ $(document).ready(function(){
             gelegenhedenItems += "  <input type='text' name='naam' placeholder='naam...' />";
             gelegenhedenItems += "  <input type='submit' name='submit' value='voeg toe' />";
             gelegenhedenItems += "</li>";
+
+            $("#groepstypenSection").append(groepstypenItems);
         });
     });
 });
