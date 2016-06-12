@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Dynamic Calc</title>
+</head>
+<body>
+<form action="Calculate.do" method="get">
+    <div>
+        <table>
+            <tr>
+            <td> <p>What is your name?</p></td>
+                <td> <input type="text" name="username" /></td>
+                </tr>
+            <tr>
+                <td>Value 1</td>
+                <td><input type="number" name="val1" /></td>
+            </tr>
+            <tr>
+                <td>Math Operator</td>
+                <td>
+                    <select required name="MathOp">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="x">*</option>
+                        <option value=":">:</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Value 2</td>
+                <td><input type="number" name="val2" /></td>
+            </tr>
+            </table>
+
+        <input type="submit" value="Go!" />
+    </div>
+</form>
+</body>
+</html>

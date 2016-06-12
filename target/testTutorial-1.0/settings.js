@@ -12,16 +12,16 @@ $(document).ready(function(){
             console.log(data);
             $(".section").text("");
             $.each(data, function (i, activiteit) {
-                activiteitenItems =  " <li class='activiteitItem' id='activiteitItem" + activiteit.ID + "'><form id='activiteit" + activiteit.ID + "'>";
-                activiteitenItems += "     <input type='text' name='id" + activiteit.ID + "' value='" + activiteit.ID + "' readonly />";
-                activiteitenItems += "     <input type='text' name='naam" + activiteit.ID + "' value='" + activiteit.naam + "' />";
-                activiteitenItems += "     <input type='submit' name='submit' value='update' />";
+                activiteitenItems =  " <li class='activiteitItem' id='activiteitItem" + activiteit.ID + "'><form id='activiteitForm" + activiteit.ID + "'>";
+                activiteitenItems += "     <input type='text' name='id' value='" + activiteit.ID + "' readonly />";
+                activiteitenItems += "     <input type='text' name='naam' value='" + activiteit.naam + "' />";
+                activiteitenItems += "     <input type='submit' class='submitActiviteit' id='" + activiteit.ID + "' value='update' />";
                 activiteitenItems += " </form></li>";
 
                 $("#activiteitenSection").append(activiteitenItems);
             });
             activiteitenItems =  "<li><form id='newActiviteit'>";
-            activiteitenItems += "  <input type='text' name='naam' placeholder='naam...' />";
+            activiteitenItems += "  <input type='text' name='naam' placeholder='naam' />";
             activiteitenItems += "  <input type='submit' name='submit' value='voeg toe' />";
             activiteitenItems += "</from></li>";
 
@@ -64,10 +64,47 @@ $(document).ready(function(){
 
                 $("#groepstypenSection").append(groepstypenItems);
             });
-            gelegenhedenItems =  "<li>";
-            gelegenhedenItems += "  <input type='text' name='naam' placeholder='naam...' />";
-            gelegenhedenItems += "  <input type='submit' name='submit' value='voeg toe' />";
-            gelegenhedenItems += "</li>";
+            groepstypenItems =  "<li>";
+            groepstypenItems += "  <input type='text' name='naam' placeholder='naam' />";
+            groepstypenItems += "  <input type='submit' name='submit' value='voeg toe' />";
+            groepstypenItems += "</li>";
+
+            $("#groepstypenSection").append(groepstypenItems);
+        });
+    });
+
+    $("#liedjesTitle").click(function() {
+        $.get("/restservices/liedjes", function (data) {
+            console.log(data);
+            $(".section").text("");
+            $.each(data, function (i, liedje) {
+                liedjesItems =  " <li class='liedjeItem' id='liedjeItem" + liedje.ID + "'><form id='liedje" + liedje.ID + "'>";
+                liedjesItems += "     <input type='text' name='id" + liedje.ID + "' value='" + liedje.ID + "' readonly />";
+                liedjesItems += "     <input type='text' name='titel" + liedje.ID + "' value='" + liedje.titel + "' />";
+                liedjesItems += "     <input type='text' name='video" + liedje.ID + "' value='" + liedje.video + "' />";
+                liedjesItems += "     <input type='text' name='tekst" + liedje.ID + "' value='" + liedje.tekst + "' />";
+                liedjesItems += "     <input type='text' name='opmerking" + liedje.ID + "' value='" + liedje.opmerking + "' />";
+                liedjesItems += "     <input type='submit' name='submit' value='update' />";
+                liedjesItems += " </li>";
+
+                $("#liedjesSection").append(liedjesItems);
+            });
+            liedjesItems =  "<li>";
+            liedjesItems += "  <input type='text' name='titel' placeholder='titel' />";
+            liedjesItems += "  <input type='text' name='video' placeholder='video' />";
+            liedjesItems += "  <input type='text' name='tekst' placeholder='tekst' />";
+            liedjesItems += "  <input type='text' name='opmerking' placeholder='opmerking' />";
+            liedjesItems += "  <input type='submit' name='submit' value='voeg toe' />";
+            liedjesItems += "</li>";
+
+            $("#liedjesSection").append(liedjesItems);
+        });
+    });
+
+    $(".submitActiviteit").click(function() {
+        $.post( "/restservices/activiteiten/update", $("#activiteitForm" + $(this).attr('id')).serialize(), function(data) {
+            $("body").html( data );
+            console.log(data);
         });
     });
 });

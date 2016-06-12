@@ -15,7 +15,7 @@ public class CountryDAO extends BaseDAO {
     }
 
     public List<Country> findAll() {
-        return selectCountries("SELECT * FROM countries");
+        return selectCountries("SELECT * FROM country");
     }
 
     public List<Country> find10LargestPopulations() {

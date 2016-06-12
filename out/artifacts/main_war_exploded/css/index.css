@@ -1,0 +1,19 @@
+#index {
+  position: fixed;
+  z-index: 11;
+
+  top: 82px;
+  width: 80%;
+  margin: 0 10%;
+
+  font-weight: bold;
+}
+.index {
+  width: 100%;
+  margin: 0 0 15px 0;
+
+  background: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  color: black;
+}
