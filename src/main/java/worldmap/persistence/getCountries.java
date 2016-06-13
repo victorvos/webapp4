@@ -1,18 +1,13 @@
 package worldmap.persistence;
 
 import javax.json.Json;
-import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import java.util.ArrayList;
 import java.util.List;
 
-import worldmap.persistence.Country;
-import worldmap.persistence.CountryDAO;
 
 /**
  * Created by larsd on 23-May-16.
