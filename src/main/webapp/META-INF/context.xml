@@ -5,6 +5,6 @@
               driverClassName="com.mysql.jdbc.Driver"
               auth="Container"
               type="javax.sql.DataSource"
-              username="root"
-              password="" />
+              username="admin2Vy5KAK"
+              password="ZhGS4GsCucP4" />
 </Context>
