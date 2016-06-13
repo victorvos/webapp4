@@ -1,7 +1,5 @@
 package worldmap.persistence;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
