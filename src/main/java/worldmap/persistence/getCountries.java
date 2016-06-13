@@ -1,5 +1,7 @@
 package worldmap.persistence;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
@@ -11,87 +13,75 @@ import javax.ws.rs.QueryParam;
 import java.util.ArrayList;
 import java.util.List;
 
+import worldmap.persistence.Country;
+import worldmap.persistence.CountryDAO;
+
 /**
- * Created by Eigenaar on 23-5-2016.
+ * Created by larsd on 23-May-16.
  */
 @Path("/countries")
-public class getCountries {
-    CountryService worldService = ServiceProvider.getWorldService();
-    List<Country> countries = worldService.getAllCountries();
-    JsonArrayBuilder jab = Json.createArrayBuilder();
+public class GetCountries {
 
-    public JsonArrayBuilder fillArray(List<Country> countries) {
-        JsonArrayBuilder jab = Json.createArrayBuilder();
-
-        for (Country c : countries) {
-            JsonObjectBuilder job = Json.createObjectBuilder();
-
-            job.add("code", c.getCode());
-            job.add("name", c.getName());
-            job.add("continent", c.getContinent());
-            job.add("region", c.getRegion());
-            job.add("surface", c.getSurface());
-            job.add("population", c.getPopulation());
-            job.add("government", c.getGovernmentForm());
-
-            jab.add(job);
-        }
-        return jab;
-    }
+    CountryDAO countryDAO = ServiceProvider.getCountryDAO();
 
     @GET
     @Produces("application/json")
     public String getCountries() {
-        List<Country> c = worldService.getAllCountries();
-        JsonObjectBuilder job = Json.createObjectBuilder();
-        fillArray(c);
-        jab.add(job);
+        List<Country> countries = countryDAO.findAll();
 
-        JsonArray array = jab.build();
-        return array.toString();
+        return getJsonFromArray(countries).build().toString();
     }
 
 //    @GET
-//    @Path("restservices/countries")
 //    @Produces("application/json")
 //    public String getCountryById(@QueryParam("code") String code) {
-//        ArrayList<Country> c = new ArrayList<Country>();
-//        c.add(worldService.getCountryByCode(code));
+//        ArrayList<Country> countries = new ArrayList<Country>();
+//        countries.add(countryDAO.findByCode(code));
 //
-//        JsonArray json = fillArray(c).build();
-//        System.out.println(json.toString());
-//
-//        return json.toString();
+//        return getJsonFromArray(countries).toString();
 //    }
 
     @GET
     @Path("/largestsurfaces")
     @Produces("application/json")
     public String getLargestSurfaces() {
-        List<Country> countries = worldService.get10LargestSurfaces();
+        List<Country> countries = countryDAO.find10LargestSurfaces();
 
-        JsonArrayBuilder jab = Json.createArrayBuilder();
-
-        fillArray(countries);
-
-        JsonArray json = jab.build();
-        System.out.println(json.toString());
-
-        return json.toString();
+        return getJsonFromArray(countries).build().toString();
     }
 
     @GET
     @Path("/largestpopulations")
     @Produces("application/json")
     public String getLargestPopulations() {
-        List<Country> countries = worldService.get10LargestPopulations();
-        JsonArrayBuilder jab = Json.createArrayBuilder();
+        List<Country> countries = countryDAO.find10LargestPopulations();
 
-        fillArray(countries);
-
-        JsonArray json = jab.build();
-        System.out.println(json.toString());
-
-        return json.toString();
+        return getJsonFromArray(countries).build().toString();
     }
+
+
+
+    public JsonArrayBuilder getJsonFromArray(List<Country> countries) {
+
+
+            JsonArrayBuilder jab = Json.createArrayBuilder();
+
+            for (Country c : countries) {
+                JsonObjectBuilder job = Json.createObjectBuilder();
+
+                job.add("code", c.getCode());
+                job.add("name", c.getName());
+                job.add("continent", c.getContinent());
+                job.add("region", c.getRegion());
+                job.add("surface", c.getSurface());
+                job.add("population", c.getPopulation());
+                job.add("government", c.getGovernmentForm());
+
+                jab.add(job);
+            }
+
+            return jab;
+    }
+
+
 }
