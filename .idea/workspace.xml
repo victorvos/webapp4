@@ -1022,7 +1022,7 @@
       <workItem from="1465819375248" duration="700000" />
       <workItem from="1465820078420" duration="527000" />
       <workItem from="1465820609065" duration="5318000" />
-      <workItem from="1465826143593" duration="376000" />
+      <workItem from="1465826143593" duration="435000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of ssh://deadlinegod-tomcatvictorvos.rhcloud.com/~/git/deadlinegod&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/encodings.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/worldmap/persistence/BaseDAO.java&#10;#&#9;src/main/java/worldmap/persistence/Country.java&#10;#&#9;src/main/java/worldmap/persistence/CountryDAO.java&#10;#&#9;src/main/java/worldmap/persistence/ServiceProvider.java&#10;#&#9;src/main/webapp/META-INF/context.xml&#10;#&#9;src/main/webapp/WEB-INF/web.xml&#10;#&#9;src/main/webapp/index.html&#10;#&#9;src/main/webapp/my_jquery_functions.js&#10;">
       <created>1465820630061</created>
@@ -1108,11 +1108,18 @@
       <option name="project" value="LOCAL" />
       <updated>1465826503645</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="db changes">
+      <created>1465826522832</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1465826522832</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9800000" />
+    <option name="totallyTimeSpent" value="9859000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1167" extended-state="0" />
