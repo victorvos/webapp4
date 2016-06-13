@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a47eab31-8395-4fe0-869d-12ac4d56d23e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/worldmap/persistence/GetCountries.java" afterPath="$PROJECT_DIR$/src/main/java/worldmap/persistence/GetCountries.java" />
     </list>
     <ignored path="webapp3.iws" />
@@ -1013,7 +1013,7 @@
       <workItem from="1465670350087" duration="1472000" />
       <workItem from="1465819375248" duration="700000" />
       <workItem from="1465820078420" duration="527000" />
-      <workItem from="1465820609065" duration="5211000" />
+      <workItem from="1465820609065" duration="5318000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of ssh://deadlinegod-tomcatvictorvos.rhcloud.com/~/git/deadlinegod&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/encodings.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/worldmap/persistence/BaseDAO.java&#10;#&#9;src/main/java/worldmap/persistence/Country.java&#10;#&#9;src/main/java/worldmap/persistence/CountryDAO.java&#10;#&#9;src/main/java/worldmap/persistence/ServiceProvider.java&#10;#&#9;src/main/webapp/META-INF/context.xml&#10;#&#9;src/main/webapp/WEB-INF/web.xml&#10;#&#9;src/main/webapp/index.html&#10;#&#9;src/main/webapp/my_jquery_functions.js&#10;">
       <created>1465820630061</created>
@@ -1096,11 +1096,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9317000" />
+    <option name="totallyTimeSpent" value="9424000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1167" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1109,7 +1109,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32923368" sideWeight="0.50835073" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32923368" sideWeight="0.50835073" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
