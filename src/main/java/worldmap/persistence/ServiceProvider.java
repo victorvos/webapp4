@@ -1,12 +1,9 @@
 package worldmap.persistence;
 
-/**
- * Created by larsd on 23-May-16.
- */
 public class ServiceProvider {
-    private static CountryDAO countryDAO = new CountryDAO();
+	private static CountryService worldService = new CountryService();
 
-    public static CountryDAO getCountryDAO() {
-        return countryDAO;
-    }
+	public static CountryService getWorldService() {
+		return worldService;
+	}
 }
