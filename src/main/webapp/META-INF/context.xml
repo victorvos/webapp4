@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
     <Resource name="jdbc/MySQLDS"
-              url="jdbc:mysql://localhost:3306/worlddb"
+              url="jdbc:mysql://localhost:3306/deadlinegod/worlddb"
               driverClassName="com.mysql.jdbc.Driver"
               auth="Container"
               type="javax.sql.DataSource"
