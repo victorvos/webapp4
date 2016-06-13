@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a47eab31-8395-4fe0-869d-12ac4d56d23e" name="Default" comment="db changes">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/worldmap/persistence/GetCountries.java" afterPath="$PROJECT_DIR$/src/main/java/worldmap/persistence/GetCountries.java" />
+    <list default="true" id="a47eab31-8395-4fe0-869d-12ac4d56d23e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="webapp3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -142,6 +142,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="origin" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -566,7 +571,7 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/META-INF/lib/mysql-connector-java-5.1.39-bin.jar!/" />
@@ -1017,7 +1022,7 @@
       <workItem from="1465819375248" duration="700000" />
       <workItem from="1465820078420" duration="527000" />
       <workItem from="1465820609065" duration="5318000" />
-      <workItem from="1465826143593" duration="132000" />
+      <workItem from="1465826143593" duration="618000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of ssh://deadlinegod-tomcatvictorvos.rhcloud.com/~/git/deadlinegod&#10;&#10;# Conflicts:&#10;#&#9;.idea/compiler.xml&#10;#&#9;.idea/encodings.xml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/worldmap/persistence/BaseDAO.java&#10;#&#9;src/main/java/worldmap/persistence/Country.java&#10;#&#9;src/main/java/worldmap/persistence/CountryDAO.java&#10;#&#9;src/main/java/worldmap/persistence/ServiceProvider.java&#10;#&#9;src/main/webapp/META-INF/context.xml&#10;#&#9;src/main/webapp/WEB-INF/web.xml&#10;#&#9;src/main/webapp/index.html&#10;#&#9;src/main/webapp/my_jquery_functions.js&#10;">
       <created>1465820630061</created>
@@ -1096,11 +1101,25 @@
       <option name="project" value="LOCAL" />
       <updated>1465824394211</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="db changes">
+      <created>1465826503645</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1465826503645</updated>
+    </task>
+    <task id="LOCAL-00013" summary="db changes">
+      <created>1465826522832</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1465826522832</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9556000" />
+    <option name="totallyTimeSpent" value="10042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1167" extended-state="0" />
