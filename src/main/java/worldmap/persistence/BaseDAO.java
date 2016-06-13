@@ -1,8 +1,6 @@
 package worldmap.persistence;
 
-/**
- * Created by larsd on 23-May-16.
- */
+
 import java.sql.Connection;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;

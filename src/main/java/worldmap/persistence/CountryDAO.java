@@ -5,9 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * Created by larsd on 23-May-16.
- */
 public class CountryDAO extends BaseDAO {
 
     public boolean werktDit() {
