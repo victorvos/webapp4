@@ -9,9 +9,6 @@ import javax.ws.rs.Produces;
 import java.util.List;
 
 
-/**
- * Created by larsd on 23-May-16.
- */
 @Path("/countries")
 public class GetCountries {
 
