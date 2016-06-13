@@ -1,20 +1,13 @@
 package worldmap.persistence;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
 import javax.json.Json;
-import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import java.util.ArrayList;
 import java.util.List;
 
-import worldmap.persistence.Country;
-import worldmap.persistence.CountryDAO;
 
 /**
  * Created by larsd on 23-May-16.
@@ -64,23 +57,23 @@ public class GetCountries {
     public JsonArrayBuilder getJsonFromArray(List<Country> countries) {
 
 
-            JsonArrayBuilder jab = Json.createArrayBuilder();
+        JsonArrayBuilder jab = Json.createArrayBuilder();
 
-            for (Country c : countries) {
-                JsonObjectBuilder job = Json.createObjectBuilder();
+        for (Country c : countries) {
+            JsonObjectBuilder job = Json.createObjectBuilder();
 
-                job.add("code", c.getCode());
-                job.add("name", c.getName());
-                job.add("continent", c.getContinent());
-                job.add("region", c.getRegion());
-                job.add("surface", c.getSurface());
-                job.add("population", c.getPopulation());
-                job.add("government", c.getGovernmentForm());
+            job.add("code", c.getCode());
+            job.add("name", c.getName());
+            job.add("continent", c.getContinent());
+            job.add("region", c.getRegion());
+            job.add("surface", c.getSurface());
+            job.add("population", c.getPopulation());
+            job.add("government", c.getGovernmentForm());
 
-                jab.add(job);
-            }
+            jab.add(job);
+        }
 
-            return jab;
+        return jab;
     }
 
 
