@@ -5,6 +5,6 @@
               driverClassName="com.mysql.jdbc.Driver"
               auth="Container"
               type="javax.sql.DataSource"
-              username="quintensql"
-              password="123" />
+              username="root"
+              password="" />
 </Context>
